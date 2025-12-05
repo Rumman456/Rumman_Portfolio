@@ -4,10 +4,9 @@ import ParticlesBackground from './ParticlesBackground';
 
 const About = () => {
   const handleDownloadResume = () => {
-    // In production, replace this with actual PDF download
     const link = document.createElement('a');
-    link.href = 'assets/RummanGD.pdf';
-    link.download = 'Rumman-Bin-Ali-Resume.pdf';
+    link.href = '/Rumman.pdf.pdf'; // Correct path to PDF in public folder
+    link.download = 'Rumman.pdf.pdf'; // Correct filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
