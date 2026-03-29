@@ -82,20 +82,20 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="relative min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-20 overflow-hidden">
+    <section id="projects" className="relative min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-16 md:py-20 overflow-hidden">
       <ParticlesBackground />
       
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-3 md:mb-4 text-white">
           My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Projects</span>
         </h2>
-        <p className="text-center text-gray-400 text-lg mb-16">Bringing ideas to life through code</p>
+        <p className="text-center text-gray-400 text-sm md:text-base lg:text-lg mb-12 md:mb-16 px-2">Bringing ideas to life through code</p>
         
-        <div className="space-y-20">
+        <div className="space-y-12 md:space-y-20\">
           {projects.map((project, index) => (
             <div 
               key={index}
-              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center group`}
+              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-6 md:gap-8 items-center group`}
             >
               {/* Image Side */}
               <div className="lg:w-1/2 relative">
@@ -104,7 +104,7 @@ const Projects = () => {
                   <img 
                     src={getImageSource(project.image)}
                     alt={project.title}
-                    className="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-48 sm:h-60 md:h-80 object-cover transform group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = `https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=600&fit=crop&text=${project.title}`;
@@ -120,12 +120,12 @@ const Projects = () => {
                   {project.subtitle}
                 </div>
                 
-                <h3 className="text-3xl md:text-4xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white group-hover:text-purple-400 transition-colors">
                   {project.title}
                 </h3>
                 
-                <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm rounded-lg p-6 border border-gray-700 hover:border-purple-500 transition-all duration-300">
-                  <p className="text-gray-300 leading-relaxed">
+                <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm rounded-lg p-4 md:p-6 border border-gray-700 hover:border-purple-500 transition-all duration-300">
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
